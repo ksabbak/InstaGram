@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
                     
                     // Enter the app!
                     
-                    self.performSegueWithIdentifier("CurrentlyLoggedIn", sender: nil)
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 }
             })
             
