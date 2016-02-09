@@ -51,7 +51,7 @@ class NewUserViewController: UIViewController {
                     })
                     
                     // Store the uid for future access - handy!
-                    NSUserDefaults.standardUserDefaults().setValue(result ["uid"], forKey: "uid")
+                    NSUserDefaults.standardUserDefaults().setValue(result ["userID"], forKey: "userID")
                     
                     // Enter the app.
                     self.dismissViewControllerAnimated(true, completion: nil)

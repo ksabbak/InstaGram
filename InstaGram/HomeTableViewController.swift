@@ -14,9 +14,13 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
 
 
-//        if NSUserDefaults.standardUserDefaults().valueForKey("userID") == nil && DataService.dataService.CURRENT_USER_REF.authData == nil {
+        if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+            //self.performSegueWithIdentifier("LoginSegue", sender: nil)
+        }
+        else
+        {
             self.performSegueWithIdentifier("LoginSegue", sender: nil)
-//        }
+        }
     }
 
 

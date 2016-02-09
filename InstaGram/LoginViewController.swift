@@ -38,7 +38,7 @@ class LoginViewController: UIViewController {
                     
                     // Be sure the correct uid is stored.
                     
-                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "userID")
                     
                     // Enter the app!
                     
