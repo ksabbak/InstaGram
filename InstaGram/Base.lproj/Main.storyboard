@@ -690,49 +690,157 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz2-Wv-51C">
-                                <rect key="frame" x="240" y="285" width="121" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="121" id="JbL-6V-RlL"/>
-                                    <constraint firstAttribute="height" constant="30" id="d8z-6n-SpE"/>
-                                </constraints>
-                                <state key="normal" title="Add from Camera"/>
-                                <connections>
-                                    <action selector="onGetFromCameraTapped:" destination="T3D-La-VzC" eventType="touchUpInside" id="fTa-67-cFK"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHc-pa-YCn">
                                 <rect key="frame" x="243" y="341" width="115" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="KCD-SB-1uQ"/>
+                                    <constraint firstAttribute="width" constant="115" id="MfK-dP-qcA"/>
+                                    <constraint firstAttribute="height" constant="30" id="Y5n-jq-ZLT"/>
                                     <constraint firstAttribute="width" constant="115" id="feh-Ud-xo0"/>
                                 </constraints>
                                 <state key="normal" title="Add from Library"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MfK-dP-qcA"/>
+                                        <exclude reference="Y5n-jq-ZLT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="KCD-SB-1uQ"/>
+                                        <include reference="MfK-dP-qcA"/>
+                                        <include reference="Y5n-jq-ZLT"/>
+                                        <exclude reference="feh-Ud-xo0"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="onGetFromLibraryTapped:" destination="T3D-La-VzC" eventType="touchUpInside" id="EDh-oC-4nZ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Np6-ya-3g4">
                                 <rect key="frame" x="180" y="103" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.83599576099999995" green="0.83080781420000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="uwC-hV-L4K"/>
                                     <constraint firstAttribute="width" constant="240" id="z80-64-fUt"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O65-TH-MvF">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bLa-qK-vwE"/>
+                                    <constraint firstAttribute="width" constant="45" id="era-GM-7Zx"/>
+                                </constraints>
+                                <state key="normal" title="Share!"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bLa-qK-vwE"/>
+                                        <exclude reference="era-GM-7Zx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="bLa-qK-vwE"/>
+                                        <include reference="era-GM-7Zx"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onShareButtonTapped:" destination="T3D-La-VzC" eventType="touchUpInside" id="EgG-wS-fke"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to add description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JYl-lp-ZrJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="260" width="240" height="128"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="T3D-La-VzC" id="uE5-lo-cOD"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dz2-Wv-51C">
+                                <rect key="frame" x="240" y="285" width="121" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="JbL-6V-RlL"/>
+                                    <constraint firstAttribute="height" constant="30" id="OzB-lL-7B7"/>
+                                    <constraint firstAttribute="width" constant="121" id="RDU-at-Sih"/>
+                                    <constraint firstAttribute="height" constant="30" id="d8z-6n-SpE"/>
+                                </constraints>
+                                <state key="normal" title="Add from Camera"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OzB-lL-7B7"/>
+                                        <exclude reference="RDU-at-Sih"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="JbL-6V-RlL"/>
+                                        <include reference="OzB-lL-7B7"/>
+                                        <include reference="RDU-at-Sih"/>
+                                        <exclude reference="d8z-6n-SpE"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onGetFromCameraTapped:" destination="T3D-La-VzC" eventType="touchUpInside" id="fTa-67-cFK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZHc-pa-YCn" firstAttribute="top" secondItem="Dz2-Wv-51C" secondAttribute="bottom" constant="26" id="9Gw-xE-6Ze"/>
+                            <constraint firstItem="Dz2-Wv-51C" firstAttribute="trailing" secondItem="E36-xz-ocS" secondAttribute="trailingMargin" id="AM9-5w-kVU"/>
                             <constraint firstItem="ZHc-pa-YCn" firstAttribute="centerX" secondItem="E36-xz-ocS" secondAttribute="centerX" id="Csy-oQ-Q3A"/>
                             <constraint firstItem="Dz2-Wv-51C" firstAttribute="centerX" secondItem="E36-xz-ocS" secondAttribute="centerX" id="J9G-du-DPz"/>
+                            <constraint firstItem="9EU-dQ-foc" firstAttribute="top" secondItem="O65-TH-MvF" secondAttribute="bottom" constant="8" id="NH8-Ex-gLM"/>
+                            <constraint firstItem="9EU-dQ-foc" firstAttribute="top" secondItem="ZHc-pa-YCn" secondAttribute="bottom" constant="106" id="QwR-Vb-ShC"/>
+                            <constraint firstItem="O65-TH-MvF" firstAttribute="centerX" secondItem="E36-xz-ocS" secondAttribute="centerX" id="bbr-CI-Cql"/>
+                            <constraint firstItem="ZHc-pa-YCn" firstAttribute="leading" secondItem="E36-xz-ocS" secondAttribute="leadingMargin" id="cEj-nE-Nxb"/>
+                            <constraint firstItem="9EU-dQ-foc" firstAttribute="top" secondItem="Dz2-Wv-51C" secondAttribute="bottom" constant="106" id="orl-vn-ZAV"/>
                             <constraint firstItem="Np6-ya-3g4" firstAttribute="top" secondItem="fz4-bt-Wjn" secondAttribute="bottom" constant="39" id="pPw-pm-txG"/>
                             <constraint firstItem="Np6-ya-3g4" firstAttribute="centerX" secondItem="E36-xz-ocS" secondAttribute="centerX" id="pgP-gl-BAe"/>
                             <constraint firstItem="Dz2-Wv-51C" firstAttribute="centerY" secondItem="E36-xz-ocS" secondAttribute="centerY" id="qfo-7z-5XV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="O65-TH-MvF"/>
+                                <exclude reference="JYl-lp-ZrJ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="cEj-nE-Nxb"/>
+                                <exclude reference="AM9-5w-kVU"/>
+                                <exclude reference="bbr-CI-Cql"/>
+                                <exclude reference="NH8-Ex-gLM"/>
+                                <exclude reference="QwR-Vb-ShC"/>
+                                <exclude reference="orl-vn-ZAV"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="O65-TH-MvF"/>
+                                <include reference="JYl-lp-ZrJ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="9Gw-xE-6Ze"/>
+                                <exclude reference="Csy-oQ-Q3A"/>
+                                <include reference="cEj-nE-Nxb"/>
+                                <include reference="AM9-5w-kVU"/>
+                                <exclude reference="J9G-du-DPz"/>
+                                <exclude reference="qfo-7z-5XV"/>
+                                <include reference="bbr-CI-Cql"/>
+                                <include reference="NH8-Ex-gLM"/>
+                                <include reference="QwR-Vb-ShC"/>
+                                <include reference="orl-vn-ZAV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Photos" id="DtL-Qg-FW5"/>
                     <connections>
                         <outlet property="imageView" destination="Np6-ya-3g4" id="xru-D4-8oD"/>
+                        <outlet property="shareButton" destination="O65-TH-MvF" id="6nu-cQ-knr"/>
+                        <outlet property="textView" destination="JYl-lp-ZrJ" id="xTw-Tz-hij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z0-XT-rxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
