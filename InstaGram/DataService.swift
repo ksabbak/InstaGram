@@ -18,6 +18,7 @@ class DataService {
     
     private var _BASE_REF = Firebase(url: "\(baseURL)")
     private var _USER_REF = Firebase(url: "\(baseURL)/users")
+
     
     var BASE_REF: Firebase {
         return _BASE_REF
@@ -34,6 +35,7 @@ class DataService {
         
         return currentUser!
     }
+    
     
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
         

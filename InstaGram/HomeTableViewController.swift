@@ -15,6 +15,7 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.navigationController?.navigationBar.translucent = false
 
         if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
@@ -24,14 +25,9 @@ class HomeTableViewController: UITableViewController {
         {
             self.performSegueWithIdentifier("LoginSegue", sender: nil)
         }
+
         
         let ref = Firebase(url: baseURL + "/photos")
-        
-//        ref.observeEventType(.Value, withBlock: { snapshot in
-//            println(snapshot.value)
-//            }, withCancelBlock: { error in
-//                println(error.description)
-//        })
         
         
         ref.observeEventType(.Value, withBlock: { snapshot in
@@ -54,9 +50,10 @@ class HomeTableViewController: UITableViewController {
                                 print(error.description)
             })
         
-        
-        
     }
+
+
+
 
 
 

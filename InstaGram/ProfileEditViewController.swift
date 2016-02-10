@@ -26,6 +26,7 @@ class ProfileEditViewController: UIViewController {
     {
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userID")
         DataService.dataService.CURRENT_USER_REF.unauth()
+
     }
 
     /*
