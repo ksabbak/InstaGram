@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="mdm-rb-DWl">
             <objects>
-                <viewController id="J2d-Rj-YYw" sceneMemberID="viewController">
+                <viewController id="J2d-Rj-YYw" customClass="DetailViewController" customModule="InstaGram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zBl-K9-W8c"/>
                         <viewControllerLayoutGuide type="bottom" id="XNT-wv-rxN"/>
@@ -18,25 +18,53 @@
                     <view key="view" contentMode="scaleToFill" id="K6h-V8-9WZ">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MQ6-ZQ-dVw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MQ6-ZQ-dVw">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="90" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="AWi-b9-m1g"/>
+                                    <constraint firstAttribute="height" constant="210" id="hFd-q2-hFG"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AWi-b9-m1g"/>
+                                        <exclude reference="hFd-q2-hFG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="AWi-b9-m1g"/>
+                                        <include reference="hFd-q2-hFG"/>
+                                    </mask>
                                 </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MQ6-ZQ-dVw" firstAttribute="top" secondItem="zBl-K9-W8c" secondAttribute="bottom" constant="70" id="C37-pj-S0u"/>
+                            <constraint firstItem="MQ6-ZQ-dVw" firstAttribute="centerX" secondItem="K6h-V8-9WZ" secondAttribute="centerX" id="uhn-Ut-vHd"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="MQ6-ZQ-dVw"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="C37-pj-S0u"/>
+                                <exclude reference="uhn-Ut-vHd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="MQ6-ZQ-dVw"/>
                             </mask>
+                            <mask key="constraints">
+                                <include reference="C37-pj-S0u"/>
+                                <include reference="uhn-Ut-vHd"/>
+                            </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="MQ6-ZQ-dVw" id="ckB-J7-Esg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E46-qn-DFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +107,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="J2d-Rj-YYw" kind="show" id="22X-98-XJ4"/>
+                                    <segue destination="J2d-Rj-YYw" kind="show" identifier="DetailSegue" id="22X-98-XJ4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -738,7 +766,7 @@
         <!--Add Photos-->
         <scene sceneID="yHu-cu-Ixh">
             <objects>
-                <viewController id="T3D-La-VzC" customClass="CameraViewController" customModule="InstaGram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="T3D-La-VzC" customClass="DetailViewController" customModule="InstaGram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fz4-bt-Wjn"/>
                         <viewControllerLayoutGuide type="bottom" id="9EU-dQ-foc"/>
