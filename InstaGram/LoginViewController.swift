@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    //Script-Kiddy bullshit, fix this later
     @IBAction func tryLogin(sender: AnyObject) {
         
         let email = emailField.text

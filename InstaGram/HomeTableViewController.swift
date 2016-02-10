@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeTableViewController: UITableViewController {
 
+    var photos = [PhotoPost]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.translucent = false
 
         if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             //self.performSegueWithIdentifier("LoginSegue", sender: nil)
@@ -21,31 +24,52 @@ class HomeTableViewController: UITableViewController {
         {
             self.performSegueWithIdentifier("LoginSegue", sender: nil)
         }
+        
+        let ref = Firebase(url: baseURL + "/photos")
+        
+        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                for snap in snapshots {
+                    let photoDictionary = snap.value as? Dictionary<String, AnyObject>
+                
+                    let newPhoto = PhotoPost(photoDictionary: photoDictionary!)
+                    self.photos.append(newPhoto)
+                    
+                    
+                }
+            }
+            self.tableView.reloadData()
+        })
+        
+        
     }
 
 
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if photos.count > 0
+        {
+            return photos.count
+        }
+        
         return 0
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
 
-        // Configure the cell...
+        if photos.count > 0
+        {
+            cell.imageView?.image = UIImage(data: photos[indexPath.row].photoPhoto)
+        }
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

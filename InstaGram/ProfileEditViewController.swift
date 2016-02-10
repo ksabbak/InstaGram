@@ -25,6 +25,7 @@ class ProfileEditViewController: UIViewController {
     @IBAction func onLogoutButtonTapped(sender: UIButton)
     {
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userID")
+        DataService.dataService.CURRENT_USER_REF.unauth()
     }
 
     /*
