@@ -58,6 +58,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     {
         uploadPhoto()
         imageView.image = nil
+        textView.text = ""
         shareButton.enabled = false
     }
     
@@ -71,8 +72,11 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
             aboutPhoto = textView.text
         }
         
+        let smallerPhoto = (UIImageJPEGRepresentation(imageView.image!, 0.6))!
         
-        let post1 = ["userID": NSUserDefaults.standardUserDefaults().valueForKey("userID")!, "photo": 1, "about": aboutPhoto]
+        let photoUpload = smallerPhoto.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+        
+        let post1 = ["userID": NSUserDefaults.standardUserDefaults().valueForKey("userID")!, "photo": photoUpload, "about": aboutPhoto]
         let post1Ref = ref.childByAutoId()
         post1Ref.setValue(post1)
     }
