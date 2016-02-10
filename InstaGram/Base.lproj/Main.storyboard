@@ -810,9 +810,6 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="260" width="240" height="128"/>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="T3D-La-VzC" id="uE5-lo-cOD"/>
                                 </connections>
@@ -847,12 +844,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JYl-lp-ZrJ" firstAttribute="top" secondItem="Np6-ya-3g4" secondAttribute="bottom" constant="29" id="2EO-Vn-4MX"/>
                             <constraint firstItem="ZHc-pa-YCn" firstAttribute="top" secondItem="Dz2-Wv-51C" secondAttribute="bottom" constant="26" id="9Gw-xE-6Ze"/>
                             <constraint firstItem="Dz2-Wv-51C" firstAttribute="trailing" secondItem="E36-xz-ocS" secondAttribute="trailingMargin" id="AM9-5w-kVU"/>
                             <constraint firstItem="ZHc-pa-YCn" firstAttribute="centerX" secondItem="E36-xz-ocS" secondAttribute="centerX" id="Csy-oQ-Q3A"/>
+                            <constraint firstItem="JYl-lp-ZrJ" firstAttribute="leading" secondItem="E36-xz-ocS" secondAttribute="leadingMargin" constant="60" id="D8s-OT-4Ud"/>
                             <constraint firstItem="Dz2-Wv-51C" firstAttribute="centerX" secondItem="E36-xz-ocS" secondAttribute="centerX" id="J9G-du-DPz"/>
                             <constraint firstItem="9EU-dQ-foc" firstAttribute="top" secondItem="O65-TH-MvF" secondAttribute="bottom" constant="8" id="NH8-Ex-gLM"/>
                             <constraint firstItem="9EU-dQ-foc" firstAttribute="top" secondItem="ZHc-pa-YCn" secondAttribute="bottom" constant="106" id="QwR-Vb-ShC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JYl-lp-ZrJ" secondAttribute="trailing" constant="60" id="Sa9-hZ-Csc"/>
+                            <constraint firstItem="ZHc-pa-YCn" firstAttribute="top" secondItem="JYl-lp-ZrJ" secondAttribute="bottom" constant="92" id="aI6-un-38r"/>
                             <constraint firstItem="O65-TH-MvF" firstAttribute="centerX" secondItem="E36-xz-ocS" secondAttribute="centerX" id="bbr-CI-Cql"/>
                             <constraint firstItem="ZHc-pa-YCn" firstAttribute="leading" secondItem="E36-xz-ocS" secondAttribute="leadingMargin" id="cEj-nE-Nxb"/>
                             <constraint firstItem="9EU-dQ-foc" firstAttribute="top" secondItem="Dz2-Wv-51C" secondAttribute="bottom" constant="106" id="orl-vn-ZAV"/>
@@ -866,6 +867,10 @@
                                 <exclude reference="JYl-lp-ZrJ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="2EO-Vn-4MX"/>
+                                <exclude reference="D8s-OT-4Ud"/>
+                                <exclude reference="Sa9-hZ-Csc"/>
+                                <exclude reference="aI6-un-38r"/>
                                 <exclude reference="cEj-nE-Nxb"/>
                                 <exclude reference="AM9-5w-kVU"/>
                                 <exclude reference="bbr-CI-Cql"/>
@@ -880,8 +885,12 @@
                                 <include reference="JYl-lp-ZrJ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="2EO-Vn-4MX"/>
+                                <include reference="D8s-OT-4Ud"/>
+                                <include reference="Sa9-hZ-Csc"/>
                                 <exclude reference="9Gw-xE-6Ze"/>
                                 <exclude reference="Csy-oQ-Q3A"/>
+                                <include reference="aI6-un-38r"/>
                                 <include reference="cEj-nE-Nxb"/>
                                 <include reference="AM9-5w-kVU"/>
                                 <exclude reference="J9G-du-DPz"/>
@@ -902,7 +911,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Z0-XT-rxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="1130"/>
+            <point key="canvasLocation" x="1030.5" y="1130"/>
         </scene>
         <!--Profile-->
         <scene sceneID="5gV-Eq-mjG">

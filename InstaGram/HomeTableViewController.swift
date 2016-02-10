@@ -27,21 +27,33 @@ class HomeTableViewController: UITableViewController {
         
         let ref = Firebase(url: baseURL + "/photos")
         
-        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+//        ref.observeEventType(.Value, withBlock: { snapshot in
+//            println(snapshot.value)
+//            }, withCancelBlock: { error in
+//                println(error.description)
+//        })
+        
+        
+        ref.observeEventType(.Value, withBlock: { snapshot in
             
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                self.photos = []
                 
                 for snap in snapshots {
                     let photoDictionary = snap.value as? Dictionary<String, AnyObject>
                 
                     let newPhoto = PhotoPost(photoDictionary: photoDictionary!)
+                    
                     self.photos.append(newPhoto)
-                    
-                    
                 }
+                   self.tableView.reloadData()
+            
             }
-            self.tableView.reloadData()
-        })
+            }, withCancelBlock: { error in
+                                print(error.description)
+            })
+        
         
         
     }
