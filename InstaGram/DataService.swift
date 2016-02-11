@@ -12,6 +12,9 @@ import Firebase
 //I probably shouldn't put this here, but it seems like a logical place to put this global constant?
 let baseURL = "https://instantgram.firebaseIO.com"
 
+var timestamp: Int {
+    return Int(floor(NSDate().timeIntervalSince1970 * 100000))
+}
 
 class DataService {
     static let dataService = DataService()

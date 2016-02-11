@@ -14,13 +14,29 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    var ref = Firebase(url: baseURL + "/photos")
+    var ref: Firebase!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         shareButton.enabled = false
         // Do any additional setup after loading the view, typically from a nib.
+        
+//        let tempRef = Firebase(url: baseURL + "/photos")
+//        
+//        tempRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+//            
+//            if snapshot.hasChild("/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)")
+//            {
+//            }
+//            else
+//            {
+//                tempRef.setValue("/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)")
+//            }
+//            
+//            })
+        ref = Firebase(url: baseURL + "/photos" + "/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)")
+        print("\(ref)")
     }
     
     
@@ -76,9 +92,11 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         let photoUpload = smallerPhoto.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         
-        let post1 = ["userID": NSUserDefaults.standardUserDefaults().valueForKey("userID")!, "photo": photoUpload, "about": aboutPhoto]
-        let post1Ref = ref.childByAutoId()
-        post1Ref.setValue(post1)
+        print(timestamp)
+        
+        let post1 =  [String(timestamp): ["photo": photoUpload, "about": aboutPhoto]]
+        //let post1Ref = ref.setValue(timestamp)
+        ref.setValue(post1)
     }
 
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {

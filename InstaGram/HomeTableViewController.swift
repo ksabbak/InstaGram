@@ -12,8 +12,12 @@ import Firebase
 class HomeTableViewController: UITableViewController {
 
     var photos = [PhotoPost]()
+    var followings = [String]()
     
-    override func viewDidLoad() {
+
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.translucent = false
@@ -25,36 +29,95 @@ class HomeTableViewController: UITableViewController {
         {
             self.performSegueWithIdentifier("LoginSegue", sender: nil)
         }
+        
+        createFollowingList()
+        
+        
 
-        
-        let ref = Firebase(url: baseURL + "/photos")
-        
-        
-        ref.observeEventType(.Value, withBlock: { snapshot in
-            
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                
-                self.photos = []
-                
-                for snap in snapshots {
-                    let photoDictionary = snap.value as? Dictionary<String, AnyObject>
-                
-                    let newPhoto = PhotoPost(photoDictionary: photoDictionary!)
-                    
-                    self.photos.append(newPhoto)
-                }
-                   self.tableView.reloadData()
-            
-            }
-            }, withCancelBlock: { error in
-                                print(error.description)
-            })
-        
+
     }
 
 
 
-
+    func createFollowingList()
+    {
+        let ref = Firebase(url: baseURL + "/users" + "/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)" + "/following")
+        
+        followings = []
+        print("1")
+        print(ref)
+        
+        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+            if snapshot.exists()
+            {
+                print("2")
+//                let followRef = Firebase(url: "\(ref)" + "/following")
+//                followRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                
+                    print("3")
+                    
+                    if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                    
+                    for snap in snapshots
+                    {
+                        let following = snap.key as String
+                        
+                        self.followings.append(following)
+                        print("gets hit")
+                        self.getThePhotos()
+                    }
+                    
+                }
+            }
+                    }, withCancelBlock: { error in
+                        print(error.description)
+                
+            
+                })
+        
+//            }, withCancelBlock: { error in
+//                print(error.description)
+//        })
+        //self.tableView.reloadData()
+        
+        
+    }
+    
+    func getThePhotos()
+    {
+        print("Hi")
+        
+        if followings.count > 0
+        {
+            
+            for user in followings
+            {
+                
+                let ref = Firebase(url: baseURL + "/photos" + "/\(user)")
+                ref.observeEventType(.Value, withBlock: { snapshot in
+                    
+                    if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                        
+                        self.photos = []
+                        
+                        for snap in snapshots {
+                            let photoDictionary = snap.value as? Dictionary<String, AnyObject>
+                            
+                            let newPhoto = PhotoPost(photoDictionary: photoDictionary!, photoKey: snap.key)
+                            
+                            self.photos.append(newPhoto)
+                        }
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    }, withCancelBlock: { error in
+                        print(error.description)
+                })
+            }
+        }
+    }
 
 
     // MARK: - Table view data source
@@ -66,7 +129,7 @@ class HomeTableViewController: UITableViewController {
             return photos.count
         }
         
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -75,6 +138,12 @@ class HomeTableViewController: UITableViewController {
         if photos.count > 0
         {
             cell.imageView?.image = UIImage(data: photos[indexPath.row].photoPhoto)
+        }
+        else
+        {
+            cell.textLabel?.text = "Welcome!"
+            cell.detailTextLabel?.text = "It doesn't look like you're following anyone yet! \n Click on the search function to find some people to follow!"
+            cell.detailTextLabel?.numberOfLines = 0
         }
 
         return cell
