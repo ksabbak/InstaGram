@@ -12,7 +12,6 @@
 		5A381DD81C69214300D0ABBC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD71C69214300D0ABBC /* HomeTableViewController.swift */; };
 		5A381DDA1C69214B00D0ABBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD91C69214B00D0ABBC /* LoginViewController.swift */; };
 		5A381DDC1C69215000D0ABBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DDB1C69215000D0ABBC /* MapViewController.swift */; };
-		5A381DDE1C69215700D0ABBC /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DDD1C69215700D0ABBC /* SearchCollectionViewController.swift */; };
 		5A381DE01C69A81800D0ABBC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DDF1C69A81800D0ABBC /* DataService.swift */; };
 		5A381DE21C6A155C00D0ABBC /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DE11C6A155C00D0ABBC /* NewUserViewController.swift */; };
 		5A381DE41C6A544200D0ABBC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DE31C6A544200D0ABBC /* ProfileViewController.swift */; };
@@ -28,6 +27,8 @@
 		A861C8A21C6AA6B00045661B /* TwitterAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A861C8A11C6AA6B00045661B /* TwitterAuthHelper.m */; };
 		A861C8A91C6AAE110045661B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A861C8A81C6AAE110045661B /* Social.framework */; };
 		A861C8AB1C6AAE1B0045661B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A861C8AA1C6AAE1B0045661B /* Accounts.framework */; };
+		E1C525701C6CF4B5006CB169 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5256F1C6CF4B5006CB169 /* SearchViewController.swift */; };
+		E1C5258B1C6D080D006CB169 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C5258A1C6D080D006CB169 /* User.swift */; };
 		EBD50D079ED4B035BB29D9A9 /* Pods_InstaGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F5BDF0EA70DDBA363F2864 /* Pods_InstaGram.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +40,6 @@
 		5A381DD71C69214300D0ABBC /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		5A381DD91C69214B00D0ABBC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A381DDB1C69215000D0ABBC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		5A381DDD1C69215700D0ABBC /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		5A381DDF1C69A81800D0ABBC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5A381DE11C6A155C00D0ABBC /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		5A381DE31C6A544200D0ABBC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +60,9 @@
 		A861C8A81C6AAE110045661B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A861C8AA1C6AAE1B0045661B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		A8F5BDF0EA70DDBA363F2864 /* Pods_InstaGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C5256F1C6CF4B5006CB169 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E1C525751C6D07A6006CB169 /* DataFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1C5258A1C6D080D006CB169 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,13 @@
 				A861C8AB1C6AAE1B0045661B /* Accounts.framework in Frameworks */,
 				A861C8A91C6AAE110045661B /* Social.framework in Frameworks */,
 				EBD50D079ED4B035BB29D9A9 /* Pods_InstaGram.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C525721C6D07A6006CB169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +99,7 @@
 		5AB2EBA91C691FBC000D9F36 = {
 			isa = PBXGroup;
 			children = (
+				E1C525891C6D07E9006CB169 /* DataFile */,
 				5AB2EBB41C691FBC000D9F36 /* InstaGram */,
 				5AB2EBB31C691FBC000D9F36 /* Products */,
 				F8D511856267998AA2C1E0C6 /* Pods */,
@@ -100,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				5AB2EBB21C691FBC000D9F36 /* InstaGram.app */,
+				E1C525751C6D07A6006CB169 /* DataFile.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,10 +127,10 @@
 				5A381DD91C69214B00D0ABBC /* LoginViewController.swift */,
 				5A381DE11C6A155C00D0ABBC /* NewUserViewController.swift */,
 				5A381DDB1C69215000D0ABBC /* MapViewController.swift */,
-				5A381DDD1C69215700D0ABBC /* SearchCollectionViewController.swift */,
 				5AB2EBB51C691FBC000D9F36 /* AppDelegate.swift */,
 				5AB2EBB71C691FBC000D9F36 /* ViewController.swift */,
 				5AB2EBB91C691FBC000D9F36 /* Main.storyboard */,
+				E1C5256F1C6CF4B5006CB169 /* SearchViewController.swift */,
 				5A381DEB1C6BBB7300D0ABBC /* DetailViewController.swift */,
 				5A381DE51C6A545E00D0ABBC /* ProfileEditViewController.swift */,
 				5A381DE31C6A544200D0ABBC /* ProfileViewController.swift */,
@@ -131,6 +143,14 @@
 				A861C8A01C6AA6AF0045661B /* InstaGram-Bridging-Header.h */,
 			);
 			path = InstaGram;
+			sourceTree = "<group>";
+		};
+		E1C525891C6D07E9006CB169 /* DataFile */ = {
+			isa = PBXGroup;
+			children = (
+				E1C5258A1C6D080D006CB169 /* User.swift */,
+			);
+			name = DataFile;
 			sourceTree = "<group>";
 		};
 		F8D511856267998AA2C1E0C6 /* Pods */ = {
@@ -165,6 +185,23 @@
 			productReference = 5AB2EBB21C691FBC000D9F36 /* InstaGram.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E1C525741C6D07A6006CB169 /* DataFile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1C525861C6D07A6006CB169 /* Build configuration list for PBXNativeTarget "DataFile" */;
+			buildPhases = (
+				E1C525711C6D07A6006CB169 /* Sources */,
+				E1C525721C6D07A6006CB169 /* Frameworks */,
+				E1C525731C6D07A6006CB169 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataFile;
+			productName = DataFile;
+			productReference = E1C525751C6D07A6006CB169 /* DataFile.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -178,6 +215,10 @@
 					5AB2EBB11C691FBC000D9F36 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = M4GJ798P8H;
+					};
+					E1C525741C6D07A6006CB169 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 578LKCXRL5;
 					};
 				};
 			};
@@ -195,6 +236,7 @@
 			projectRoot = "";
 			targets = (
 				5AB2EBB11C691FBC000D9F36 /* InstaGram */,
+				E1C525741C6D07A6006CB169 /* DataFile */,
 			);
 		};
 /* End PBXProject section */
@@ -207,6 +249,13 @@
 				5AB2EBC31C691FBC000D9F36 /* LaunchScreen.storyboard in Resources */,
 				5AB2EBC01C691FBC000D9F36 /* Assets.xcassets in Resources */,
 				5AB2EBBB1C691FBC000D9F36 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C525731C6D07A6006CB169 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,15 +321,23 @@
 				5A381DD61C69213A00D0ABBC /* CameraViewController.swift in Sources */,
 				5AB2EBBE1C691FBC000D9F36 /* InstaGram.xcdatamodeld in Sources */,
 				5AB2EBB61C691FBC000D9F36 /* AppDelegate.swift in Sources */,
+				E1C5258B1C6D080D006CB169 /* User.swift in Sources */,
 				5A381DE41C6A544200D0ABBC /* ProfileViewController.swift in Sources */,
 				5A381DD41C69213400D0ABBC /* ActivityViewController.swift in Sources */,
 				5A381DE81C6B6EA400D0ABBC /* PhotoPost.swift in Sources */,
-				5A381DDE1C69215700D0ABBC /* SearchCollectionViewController.swift in Sources */,
+				E1C525701C6CF4B5006CB169 /* SearchViewController.swift in Sources */,
 				5A381DE21C6A155C00D0ABBC /* NewUserViewController.swift in Sources */,
 				5A381DDC1C69215000D0ABBC /* MapViewController.swift in Sources */,
 				5A381DEC1C6BBB7300D0ABBC /* DetailViewController.swift in Sources */,
 				5A381DE61C6A545E00D0ABBC /* ProfileEditViewController.swift in Sources */,
 				5A381DE01C69A81800D0ABBC /* DataService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1C525711C6D07A6006CB169 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksabbak.InstaGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kanybek/Desktop/INSTANTGRAM/InstaGram/InstaGram/InstaGram-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaGram/InstaGram-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -414,7 +471,29 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksabbak.InstaGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kanybek/Desktop/INSTANTGRAM/InstaGram/InstaGram/InstaGram-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "InstaGram/InstaGram-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		E1C525871C6D07A6006CB169 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DataFile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tellez.DataFile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E1C525881C6D07A6006CB169 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DataFile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Tellez.DataFile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -438,6 +517,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E1C525861C6D07A6006CB169 /* Build configuration list for PBXNativeTarget "DataFile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1C525871C6D07A6006CB169 /* Debug */,
+				E1C525881C6D07A6006CB169 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
