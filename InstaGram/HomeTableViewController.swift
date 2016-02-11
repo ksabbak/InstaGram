@@ -10,12 +10,14 @@ import UIKit
 import Firebase
 
 class HomeTableViewController: UITableViewController {
-
+    
     var photos = [PhotoPost]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier:"CellID")
+        
         self.navigationController?.navigationBar.translucent = false
 
         if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
@@ -69,17 +71,29 @@ class HomeTableViewController: UITableViewController {
         return 0
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
-
-        if photos.count > 0
-        {
-            cell.imageView?.image = UIImage(data: photos[indexPath.row].photoPhoto)
-        }
-
-        return cell
-    }
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
+//
+//        if photos.count > 0
+//        {
+//            cell.imageView?.image = UIImage(data: photos[indexPath.row].photoPhoto)
+//            cell.detailTextLabel?.text = "\(photos[indexPath.row].photoPoster)"
+//            print(baseURL + "/photos" )
+//
+//        }
+//        return cell
+//    }
+//    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -&gt; UITableViewCell {
     
+    var cell:CustomTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("CellID") as! CustomTableViewCell
+    
+    cell.imageVW.image = UIImage(data: photos[indexPath.row].photoPhoto)
+    
+    cell.label.text = self.photos[indexPath.row].photosPoster
+    
+    return cell
+    }
    
     
     //MARK: - Prepare for Segue

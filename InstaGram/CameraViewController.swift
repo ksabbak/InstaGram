@@ -76,7 +76,7 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
         let photoUpload = smallerPhoto.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
         
-        let post1 = ["userID": NSUserDefaults.standardUserDefaults().valueForKey("userID")!, "photo": photoUpload, "about": aboutPhoto]
+        let post1 = ["userID":  NSUserDefaults.standardUserDefaults().valueForKey("userID")!, "photo": photoUpload, "about": aboutPhoto]
         let post1Ref = ref.childByAutoId()
         post1Ref.setValue(post1)
     }

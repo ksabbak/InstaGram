@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Social/Social.h>
 #import "TwitterAuthHelper.h"
-#import <Firebase/Firebase.h>
-
+#import <Accounts/Accounts.h>
 
 @interface TwitterAuthHelper ()
 @property (strong, nonatomic) ACAccount *account;

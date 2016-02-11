@@ -93,11 +93,23 @@ class LoginViewController: UIViewController, UIActionSheetDelegate {
         authHelper.authenticateAccount(account, withCallback: { (error, authData) -> Void in
             if error != nil {
                 // There was an error authenticating
+                print("there was an error authenticationg")
+                print(error.description)
             } else {
+                
                 // We have an authenticated Twitter user
-                NSLog("%@", authData)
+                print(authData.providerData.description)
                 // segue to chat
 //                self.performSegueWithIdentifier("twitterLogin", sender: authData)
+                let user = ["provider":authData.provider, "username": "\(authData.providerData["username"]!)"]
+                DataService.dataService.createNewAccount(authData.uid, user: user)
+                
+                NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "userID")
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
+                let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.login()
+                
                 self.dismissViewControllerAnimated(true, completion: nil)
             }
         })

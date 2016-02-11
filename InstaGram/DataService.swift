@@ -37,7 +37,7 @@ class DataService {
     }
     
     
-    func createNewAccount(uid: String, user: Dictionary<String, String>) {
+    func createNewAccount(uid: String, user: Dictionary<String, AnyObject>) {
         
         // A User is born.
         
