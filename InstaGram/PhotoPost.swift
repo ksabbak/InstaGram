@@ -13,16 +13,16 @@ class PhotoPost{
 
     let photoString: String
     let aboutPhoto: String
-    //let photoPoster: String
+    let photoUser: String
     let photoPhoto: NSData
     let photoTime: Int
     
     
-    init (photoDictionary: [String:AnyObject], photoKey: String)
+    init (photoDictionary: [String:AnyObject], photoKey: String, photoPoster: String)
     {
         photoString = photoDictionary["photo"] as! String
         aboutPhoto = photoDictionary["about"] as! String
-        //photoPoster = photoDictionary["userID"] as! String  //THIS NEEDS TO BE FIXED
+        photoUser = photoPoster
         photoTime = Int(photoKey)!
         
         

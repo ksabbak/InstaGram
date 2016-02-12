@@ -12,13 +12,16 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageVW: UIImageView!
    
-    
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
 
     
+    }
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
 
 }

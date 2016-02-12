@@ -94,9 +94,10 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
         
 
         
-        let post1 =  [String(timestamp): ["photo": photoUpload, "about": aboutPhoto]]
+        let post1 =  ["photo": photoUpload, "about": aboutPhoto]
         //let post1Ref = ref.setValue(timestamp)
-        ref.setValue(post1)
+        let newRef = ref.childByAppendingPath(String(timestamp))
+        newRef.updateChildValues(post1)
     }
 
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {

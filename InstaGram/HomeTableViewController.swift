@@ -13,7 +13,7 @@ class HomeTableViewController: UITableViewController {
     
     var photos = [PhotoPost]()
     var followings = [String]()
-    
+    var user: User!
 
     
     override func viewDidLoad()
@@ -26,57 +26,72 @@ class HomeTableViewController: UITableViewController {
 
         if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
             //self.performSegueWithIdentifier("LoginSegue", sender: nil)
+            buildUser()
         }
         else
         {
             self.performSegueWithIdentifier("LoginSegue", sender: nil)
         }
         
-        createFollowingList()
+        
         
         
 
 
     }
 
-
-
-    func createFollowingList()
+    func buildUser()
     {
-        let ref = Firebase(url: baseURL + "/users" + "/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)" + "/following")
+        let ref = Firebase(url: baseURL + "/users" + "/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)")
         
-        followings = []
-        print("1")
-        print(ref)
         
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             
-            if snapshot.exists()
-            {
-                print("2")
-//                let followRef = Firebase(url: "\(ref)" + "/following")
-//                followRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-                
-                    print("3")
-                    
-                    if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                    
-                    for snap in snapshots
-                    {
-                        let following = snap.key as String
-                        
-                        self.followings.append(following)
-                        print("gets hit")
-                        self.getThePhotos()
-                    }
-                    
-                }
-            }
-                    }, withCancelBlock: { error in
-                        print(error.description)
-                
+            let userDictionary = snapshot.value as? Dictionary<String, AnyObject>
             
-                })
+            self.user = User(userDictionary: userDictionary!, user: NSUserDefaults.standardUserDefaults().valueForKey("userID")! as! String)
+            self.getThePhotos()
+            
+        })
+        
+    }
+
+    func createFollowingList()
+    {
+//        let ref = Firebase(url: baseURL + "/users" + "/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)" + "/following")
+//        
+//        followings = []
+//        print("1")
+//        print(ref)
+//        
+//        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+//            
+//            if snapshot.exists()
+//            {
+//                print("2")
+////                let followRef = Firebase(url: "\(ref)" + "/following")
+////                followRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+//                
+//                    print("3")
+//                    
+//                    if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+//                    
+//                    for snap in snapshots
+//                    {
+//                        let following = snap.key as String
+//                        
+//                        self.followings.append(following)
+//                        print("gets hit")
+//                        self.getThePhotos()
+//                    }
+//                    
+//                }
+//            }
+//                    }, withCancelBlock: { error in
+//                        print(error.description)
+//                
+//            
+//                })
         
 //            }, withCancelBlock: { error in
 //                print(error.description)
@@ -84,36 +99,40 @@ class HomeTableViewController: UITableViewController {
         //self.tableView.reloadData()
         
         
+        
+        
+        
+        
     }
     
     func getThePhotos()
     {
-        print("Hi")
+        print(user.following.count)
         
-        if followings.count > 0
+        if user.following.count > 0
         {
-            
-            for user in followings
+            self.photos = []
+            for friend in user.following
             {
                 
-                let ref = Firebase(url: baseURL + "/photos" + "/\(user)")
-                ref.observeEventType(.Value, withBlock: { snapshot in
+                let ref = Firebase(url: baseURL + "/photos" + "/\(friend)")
+                ref.observeEventType(.ChildAdded, withBlock: { snapshot in
                     
                     if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                         
-                        self.photos = []
                         
-                        for snap in snapshots {
-                            let photoDictionary = snap.value as? Dictionary<String, AnyObject>
+                        
+                        //for snap in snapshots {
+                            let photoDictionary = snapshot.value as? Dictionary<String, AnyObject>
                             
-                            let newPhoto = PhotoPost(photoDictionary: photoDictionary!, photoKey: snap.key)
+                            let newPhoto = PhotoPost(photoDictionary: photoDictionary!, photoKey: snapshot.key, photoPoster: friend)
                             
                             self.photos.append(newPhoto)
                         }
                         
                         self.tableView.reloadData()
                         
-                    }
+                    //}
                     }, withCancelBlock: { error in
                         print(error.description)
                 })
@@ -137,19 +156,20 @@ class HomeTableViewController: UITableViewController {
 //    
 //    var cell:CustomTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("CellID") as! CustomTableViewCell
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CellID", forIndexPath: indexPath)
-
+        let cell:CustomTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("CellID") as! CustomTableViewCell
         if photos.count > 0
         {
-            cell.imageView?.image = UIImage(data: photos[indexPath.row].photoPhoto)
+            cell.imageVW?.image = UIImage(data: photos[indexPath.row].photoPhoto)
+            cell.label?.text = "\(user.userName)"
+            cell.detailLabel.text = "\(photos[indexPath.row].aboutPhoto)"
         }
         else
         {
-            cell.textLabel?.text = "Welcome!"
+            cell.label?.text = "Welcome!"
             cell.detailTextLabel?.text = "It doesn't look like you're following anyone yet! \n Click on the search function to find some people to follow!"
             cell.detailTextLabel?.numberOfLines = 0
         }
-
+        
         return cell
     }
 
@@ -166,7 +186,7 @@ class HomeTableViewController: UITableViewController {
    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "DetailSegue"
+        if segue.identifier == "DetailSegue" && photos.count > 0
         {
             let dvc = segue.destinationViewController as! DetailViewController
             
@@ -174,10 +194,16 @@ class HomeTableViewController: UITableViewController {
             
             dvc.photo = photos[(indexPath?.row)!]
             
-            
-            
-            
         }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "DetailSegue" && photos.count == 0
+        {
+            return false
+        }
+        
+        return true
     }
 
   

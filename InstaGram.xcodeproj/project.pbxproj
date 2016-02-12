@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A07203A1C6D1B1C0096C92F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0720391C6D1B1C0096C92F /* User.swift */; };
+		5A07203E1C6D84E10096C92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A07203D1C6D84E10096C92F /* Main.storyboard */; };
+		5A0720401C6D85640096C92F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A07203F1C6D85640096C92F /* CustomTableViewCell.swift */; };
 		5A381DD41C69213400D0ABBC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD31C69213400D0ABBC /* ActivityViewController.swift */; };
 		5A381DD61C69213A00D0ABBC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD51C69213A00D0ABBC /* CameraViewController.swift */; };
 		5A381DD81C69214300D0ABBC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD71C69214300D0ABBC /* HomeTableViewController.swift */; };
@@ -19,15 +22,12 @@
 		5A381DE61C6A545E00D0ABBC /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DE51C6A545E00D0ABBC /* ProfileEditViewController.swift */; };
 		5A381DE81C6B6EA400D0ABBC /* PhotoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DE71C6B6EA400D0ABBC /* PhotoPost.swift */; };
 		5AB2EBB61C691FBC000D9F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2EBB51C691FBC000D9F36 /* AppDelegate.swift */; };
-		5AB2EBB81C691FBC000D9F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2EBB71C691FBC000D9F36 /* ViewController.swift */; };
 		5AB2EBBE1C691FBC000D9F36 /* InstaGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AB2EBBC1C691FBC000D9F36 /* InstaGram.xcdatamodeld */; };
 		5AB2EBC01C691FBC000D9F36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2EBBF1C691FBC000D9F36 /* Assets.xcassets */; };
 		5AB2EBC31C691FBC000D9F36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB2EBC11C691FBC000D9F36 /* LaunchScreen.storyboard */; };
 		A861C8A21C6AA6B00045661B /* TwitterAuthHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A861C8A11C6AA6B00045661B /* TwitterAuthHelper.m */; };
 		A861C8A91C6AAE110045661B /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A861C8A81C6AAE110045661B /* Social.framework */; };
 		A861C8AB1C6AAE1B0045661B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A861C8AA1C6AAE1B0045661B /* Accounts.framework */; };
-		A8E901EB1C6CF9620014CF96 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E901EA1C6CF9620014CF96 /* CustomTableViewCell.swift */; };
-		A8E901ED1C6D06460014CF96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8E901EC1C6D06460014CF96 /* Main.storyboard */; };
 		A8E901EF1C6D07C90014CF96 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E901EE1C6D07C90014CF96 /* DetailViewController.swift */; };
 		EBD50D079ED4B035BB29D9A9 /* Pods_InstaGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F5BDF0EA70DDBA363F2864 /* Pods_InstaGram.framework */; };
 /* End PBXBuildFile section */
@@ -35,6 +35,9 @@
 /* Begin PBXFileReference section */
 		05F8F998E9BEB6089F736F39 /* Pods-InstaGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaGram/Pods-InstaGram.debug.xcconfig"; sourceTree = "<group>"; };
 		24DC870A782CF12D287BB901 /* Pods-InstaGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaGram/Pods-InstaGram.release.xcconfig"; sourceTree = "<group>"; };
+		5A0720391C6D1B1C0096C92F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5A07203D1C6D84E10096C92F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5A07203F1C6D85640096C92F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5A381DD31C69213400D0ABBC /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		5A381DD51C69213A00D0ABBC /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5A381DD71C69214300D0ABBC /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +51,6 @@
 		5A381DE71C6B6EA400D0ABBC /* PhotoPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPost.swift; sourceTree = "<group>"; };
 		5AB2EBB21C691FBC000D9F36 /* InstaGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB2EBB51C691FBC000D9F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5AB2EBB71C691FBC000D9F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5AB2EBBD1C691FBC000D9F36 /* InstaGram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaGram.xcdatamodel; sourceTree = "<group>"; };
 		5AB2EBBF1C691FBC000D9F36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AB2EBC21C691FBC000D9F36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +60,6 @@
 		A861C8A31C6AA6DC0045661B /* TwitterAuthHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterAuthHelper.h; sourceTree = "<group>"; };
 		A861C8A81C6AAE110045661B /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A861C8AA1C6AAE1B0045661B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		A8E901EA1C6CF9620014CF96 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		A8E901EC1C6D06460014CF96 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A8E901EE1C6D07C90014CF96 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A8F5BDF0EA70DDBA363F2864 /* Pods_InstaGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,7 +91,6 @@
 		5AB2EBA91C691FBC000D9F36 = {
 			isa = PBXGroup;
 			children = (
-				A8E901EA1C6CF9620014CF96 /* CustomTableViewCell.swift */,
 				5AB2EBB41C691FBC000D9F36 /* InstaGram */,
 				5AB2EBB31C691FBC000D9F36 /* Products */,
 				F8D511856267998AA2C1E0C6 /* Pods */,
@@ -110,23 +109,24 @@
 		5AB2EBB41C691FBC000D9F36 /* InstaGram */ = {
 			isa = PBXGroup;
 			children = (
+				5AB2EBB51C691FBC000D9F36 /* AppDelegate.swift */,
+				5A07203F1C6D85640096C92F /* CustomTableViewCell.swift */,
+				5A381DE71C6B6EA400D0ABBC /* PhotoPost.swift */,
+				5A0720391C6D1B1C0096C92F /* User.swift */,
+				5A381DDF1C69A81800D0ABBC /* DataService.swift */,
 				5A381DD31C69213400D0ABBC /* ActivityViewController.swift */,
 				5A381DD51C69213A00D0ABBC /* CameraViewController.swift */,
-				5A381DE71C6B6EA400D0ABBC /* PhotoPost.swift */,
 				5A381DD71C69214300D0ABBC /* HomeTableViewController.swift */,
 				A8E901EE1C6D07C90014CF96 /* DetailViewController.swift */,
-				5A381DDF1C69A81800D0ABBC /* DataService.swift */,
 				5A381DD91C69214B00D0ABBC /* LoginViewController.swift */,
 				5A381DE11C6A155C00D0ABBC /* NewUserViewController.swift */,
 				5A381DDB1C69215000D0ABBC /* MapViewController.swift */,
 				5A381DDD1C69215700D0ABBC /* SearchCollectionViewController.swift */,
-				5AB2EBB51C691FBC000D9F36 /* AppDelegate.swift */,
-				5AB2EBB71C691FBC000D9F36 /* ViewController.swift */,
 				5A381DE51C6A545E00D0ABBC /* ProfileEditViewController.swift */,
 				5A381DE31C6A544200D0ABBC /* ProfileViewController.swift */,
+				5A07203D1C6D84E10096C92F /* Main.storyboard */,
 				A861C8A31C6AA6DC0045661B /* TwitterAuthHelper.h */,
 				A861C8A11C6AA6B00045661B /* TwitterAuthHelper.m */,
-				A8E901EC1C6D06460014CF96 /* Main.storyboard */,
 				5AB2EBBF1C691FBC000D9F36 /* Assets.xcassets */,
 				5AB2EBC11C691FBC000D9F36 /* LaunchScreen.storyboard */,
 				5AB2EBC41C691FBC000D9F36 /* Info.plist */,
@@ -207,7 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8E901ED1C6D06460014CF96 /* Main.storyboard in Resources */,
+				5A07203E1C6D84E10096C92F /* Main.storyboard in Resources */,
 				5AB2EBC31C691FBC000D9F36 /* LaunchScreen.storyboard in Resources */,
 				5AB2EBC01C691FBC000D9F36 /* Assets.xcassets in Resources */,
 			);
@@ -268,20 +268,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0720401C6D85640096C92F /* CustomTableViewCell.swift in Sources */,
 				5A381DDA1C69214B00D0ABBC /* LoginViewController.swift in Sources */,
 				A8E901EF1C6D07C90014CF96 /* DetailViewController.swift in Sources */,
 				5A381DD81C69214300D0ABBC /* HomeTableViewController.swift in Sources */,
-				5AB2EBB81C691FBC000D9F36 /* ViewController.swift in Sources */,
 				A861C8A21C6AA6B00045661B /* TwitterAuthHelper.m in Sources */,
 				5A381DD61C69213A00D0ABBC /* CameraViewController.swift in Sources */,
 				5AB2EBBE1C691FBC000D9F36 /* InstaGram.xcdatamodeld in Sources */,
 				5AB2EBB61C691FBC000D9F36 /* AppDelegate.swift in Sources */,
 				5A381DE41C6A544200D0ABBC /* ProfileViewController.swift in Sources */,
 				5A381DD41C69213400D0ABBC /* ActivityViewController.swift in Sources */,
-				A8E901EB1C6CF9620014CF96 /* CustomTableViewCell.swift in Sources */,
 				5A381DE81C6B6EA400D0ABBC /* PhotoPost.swift in Sources */,
 				5A381DDE1C69215700D0ABBC /* SearchCollectionViewController.swift in Sources */,
 				5A381DE21C6A155C00D0ABBC /* NewUserViewController.swift in Sources */,
+				5A07203A1C6D1B1C0096C92F /* User.swift in Sources */,
 				5A381DDC1C69215000D0ABBC /* MapViewController.swift in Sources */,
 				5A381DE61C6A545E00D0ABBC /* ProfileEditViewController.swift in Sources */,
 				5A381DE01C69A81800D0ABBC /* DataService.swift in Sources */,
@@ -395,7 +395,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksabbak.InstaGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kanybek/Desktop/INSTANTGRAM/InstaGram/InstaGram/InstaGram-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kkesington/Desktop/MMA/NerfedIG/InstaGram/InstaGram/InstaGram-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -410,7 +410,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ksabbak.InstaGram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kanybek/Desktop/INSTANTGRAM/InstaGram/InstaGram/InstaGram-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kkesington/Desktop/MMA/NerfedIG/InstaGram/InstaGram/InstaGram-Bridging-Header.h";
 			};
 			name = Release;
 		};
