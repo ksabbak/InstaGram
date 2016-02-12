@@ -24,21 +24,31 @@ class HomeTableViewController: UITableViewController {
         
         self.navigationController?.navigationBar.translucent = false
 
-        if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
-            //self.performSegueWithIdentifier("LoginSegue", sender: nil)
-            buildUser()
+        if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil //&& DataService.dataService.CURRENT_USER_REF.authData != nil 
+        {
+            //buildUser()
         }
         else
         {
+            
+           // let loginSegueController = LoginViewController()
+            //loginSegueController.delegate = self
             self.performSegueWithIdentifier("LoginSegue", sender: nil)
         }
         
         
-        
-        
-
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if NSUserDefaults.standardUserDefaults().valueForKey("userID") != nil //&& DataService.dataService.CURRENT_USER_REF.authData != nil
+        {
+            buildUser()
+                    }
+    
 
     }
+    
 
     func buildUser()
     {
@@ -111,35 +121,54 @@ class HomeTableViewController: UITableViewController {
         
         if user.following.count > 0
         {
-            self.photos = []
+            //self.photos = []
             for friend in user.following
             {
                 
                 let ref = Firebase(url: baseURL + "/photos" + "/\(friend)")
                 ref.observeEventType(.ChildAdded, withBlock: { snapshot in
                     
-                    if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                        
-                        
-                        
-                        //for snap in snapshots {
-                            let photoDictionary = snapshot.value as? Dictionary<String, AnyObject>
-                            
-                            let newPhoto = PhotoPost(photoDictionary: photoDictionary!, photoKey: snapshot.key, photoPoster: friend)
-                            
-                            self.photos.append(newPhoto)
+                    //if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                    
+                    
+                    
+                    //for snap in snapshots {
+                    let photoDictionary = snapshot.value as? Dictionary<String, AnyObject>
+                    
+                    let newPhoto = PhotoPost(photoDictionary: photoDictionary!, photoKey: snapshot.key, photoPoster: friend)
+                    
+                    var doNotAdd = false
+                    for photo in self.photos
+                    {
+                        if photo.photoTime == newPhoto.photoTime
+                        {
+                            doNotAdd = true
                         }
-                        
+                    }
+                    
+                    if doNotAdd != true
+                    {
+                        self.photos.append(newPhoto)
+                    }
                         self.tableView.reloadData()
+                        // }
                         
-                    //}
+                        
+                        
+                        //}
                     }, withCancelBlock: { error in
                         print(error.description)
-                })
+                    })
             }
         }
     }
 
+    
+//    func onDismissed()
+//    {
+//        self.buildUser()
+//        print("??")
+//    }
 
     // MARK: - Table view data source
 
@@ -196,6 +225,7 @@ class HomeTableViewController: UITableViewController {
             
         }
     }
+    
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "DetailSegue" && photos.count == 0

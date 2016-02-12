@@ -7,29 +7,41 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    var user:User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        buildUser()
+        
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func buildUser()
+    {
+        let ref = Firebase(url: baseURL + "/users" + "/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)")
+        
+        
+        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+            let userDictionary = snapshot.value as? Dictionary<String, AnyObject>
+            
+            self.user = User(userDictionary: userDictionary!, user: NSUserDefaults.standardUserDefaults().valueForKey("userID")! as! String)
+            self.updateProfile()
+            
+        })
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    func updateProfile()
+    {
+        titleLabel.text = user.userName
     }
-    */
-
 }

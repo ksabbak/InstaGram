@@ -10,12 +10,14 @@
 		5A07203A1C6D1B1C0096C92F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0720391C6D1B1C0096C92F /* User.swift */; };
 		5A07203E1C6D84E10096C92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A07203D1C6D84E10096C92F /* Main.storyboard */; };
 		5A0720401C6D85640096C92F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A07203F1C6D85640096C92F /* CustomTableViewCell.swift */; };
+		5A0720421C6DD7C00096C92F /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0720411C6DD7C00096C92F /* SearchTableViewController.swift */; };
+		5A0720441C6DEBF60096C92F /* FollowerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0720431C6DEBF60096C92F /* FollowerProfileViewController.swift */; };
+		5A0720461C6DF9B30096C92F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0720451C6DF9B30096C92F /* UserProfile.swift */; };
 		5A381DD41C69213400D0ABBC /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD31C69213400D0ABBC /* ActivityViewController.swift */; };
 		5A381DD61C69213A00D0ABBC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD51C69213A00D0ABBC /* CameraViewController.swift */; };
 		5A381DD81C69214300D0ABBC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD71C69214300D0ABBC /* HomeTableViewController.swift */; };
 		5A381DDA1C69214B00D0ABBC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DD91C69214B00D0ABBC /* LoginViewController.swift */; };
 		5A381DDC1C69215000D0ABBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DDB1C69215000D0ABBC /* MapViewController.swift */; };
-		5A381DDE1C69215700D0ABBC /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DDD1C69215700D0ABBC /* SearchCollectionViewController.swift */; };
 		5A381DE01C69A81800D0ABBC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DDF1C69A81800D0ABBC /* DataService.swift */; };
 		5A381DE21C6A155C00D0ABBC /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DE11C6A155C00D0ABBC /* NewUserViewController.swift */; };
 		5A381DE41C6A544200D0ABBC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A381DE31C6A544200D0ABBC /* ProfileViewController.swift */; };
@@ -38,12 +40,14 @@
 		5A0720391C6D1B1C0096C92F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5A07203D1C6D84E10096C92F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5A07203F1C6D85640096C92F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		5A0720411C6DD7C00096C92F /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		5A0720431C6DEBF60096C92F /* FollowerProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerProfileViewController.swift; sourceTree = "<group>"; };
+		5A0720451C6DF9B30096C92F /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		5A381DD31C69213400D0ABBC /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		5A381DD51C69213A00D0ABBC /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5A381DD71C69214300D0ABBC /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		5A381DD91C69214B00D0ABBC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5A381DDB1C69215000D0ABBC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		5A381DDD1C69215700D0ABBC /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		5A381DDF1C69A81800D0ABBC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5A381DE11C6A155C00D0ABBC /* NewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		5A381DE31C6A544200D0ABBC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -121,12 +125,14 @@
 				5A381DD91C69214B00D0ABBC /* LoginViewController.swift */,
 				5A381DE11C6A155C00D0ABBC /* NewUserViewController.swift */,
 				5A381DDB1C69215000D0ABBC /* MapViewController.swift */,
-				5A381DDD1C69215700D0ABBC /* SearchCollectionViewController.swift */,
 				5A381DE51C6A545E00D0ABBC /* ProfileEditViewController.swift */,
 				5A381DE31C6A544200D0ABBC /* ProfileViewController.swift */,
 				5A07203D1C6D84E10096C92F /* Main.storyboard */,
+				5A0720431C6DEBF60096C92F /* FollowerProfileViewController.swift */,
+				5A0720411C6DD7C00096C92F /* SearchTableViewController.swift */,
 				A861C8A31C6AA6DC0045661B /* TwitterAuthHelper.h */,
 				A861C8A11C6AA6B00045661B /* TwitterAuthHelper.m */,
+				5A0720451C6DF9B30096C92F /* UserProfile.swift */,
 				5AB2EBBF1C691FBC000D9F36 /* Assets.xcassets */,
 				5AB2EBC11C691FBC000D9F36 /* LaunchScreen.storyboard */,
 				5AB2EBC41C691FBC000D9F36 /* Info.plist */,
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A0720401C6D85640096C92F /* CustomTableViewCell.swift in Sources */,
+				5A0720421C6DD7C00096C92F /* SearchTableViewController.swift in Sources */,
 				5A381DDA1C69214B00D0ABBC /* LoginViewController.swift in Sources */,
 				A8E901EF1C6D07C90014CF96 /* DetailViewController.swift in Sources */,
 				5A381DD81C69214300D0ABBC /* HomeTableViewController.swift in Sources */,
@@ -279,9 +286,10 @@
 				5A381DE41C6A544200D0ABBC /* ProfileViewController.swift in Sources */,
 				5A381DD41C69213400D0ABBC /* ActivityViewController.swift in Sources */,
 				5A381DE81C6B6EA400D0ABBC /* PhotoPost.swift in Sources */,
-				5A381DDE1C69215700D0ABBC /* SearchCollectionViewController.swift in Sources */,
 				5A381DE21C6A155C00D0ABBC /* NewUserViewController.swift in Sources */,
 				5A07203A1C6D1B1C0096C92F /* User.swift in Sources */,
+				5A0720461C6DF9B30096C92F /* UserProfile.swift in Sources */,
+				5A0720441C6DEBF60096C92F /* FollowerProfileViewController.swift in Sources */,
 				5A381DDC1C69215000D0ABBC /* MapViewController.swift in Sources */,
 				5A381DE61C6A545E00D0ABBC /* ProfileEditViewController.swift in Sources */,
 				5A381DE01C69A81800D0ABBC /* DataService.swift in Sources */,

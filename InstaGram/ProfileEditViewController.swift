@@ -7,36 +7,68 @@
 //
 
 import UIKit
-//import
+import Firebase
 
 class ProfileEditViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var websiteTextField: UITextField!
+    @IBOutlet weak var bioTextField: UITextField!
+    
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        buildUser()
+        
     }
+    
+    
+    func buildUser()
+    {
+        let ref = Firebase(url: baseURL + "/users" + "/\(NSUserDefaults.standardUserDefaults().valueForKey("userID")!)")
+        
+        
+        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            
+            let userDictionary = snapshot.value as? Dictionary<String, AnyObject>
+            
+            self.user = User(userDictionary: userDictionary!, user: NSUserDefaults.standardUserDefaults().valueForKey("userID")! as! String)
+            self.updateFields()
+            
+        })
+        
+    }
+    
+    func updateFields()
+    {
+        if user.userPersonalName.characters.count > 0
+        {
+            nameTextField.text = user.userPersonalName
+        }
+        
+        if user.userWeb.characters.count > 0
+        {
+            websiteTextField.text = user.userWeb
+        }
+        
+        if user.userBio.characters.count > 0
+        {
+            bioTextField.text = user.userBio
+        }
+    }
+    
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func onLogoutButtonTapped(sender: UIButton)
     {
+        
+        //DataService.dataService.CURRENT_USER_REF.unauth()
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "userID")
-        DataService.dataService.CURRENT_USER_REF.unauth()
-
+       
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

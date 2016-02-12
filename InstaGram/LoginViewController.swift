@@ -9,10 +9,13 @@
 import UIKit
 import Firebase
 
+
 class LoginViewController: UIViewController, UIActionSheetDelegate {
     var authHelper: TwitterAuthHelper!
     var accounts: [ACAccount]!
     var ref: Firebase!
+    
+
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -48,7 +51,7 @@ class LoginViewController: UIViewController, UIActionSheetDelegate {
                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "userID")
                     
                     // Enter the app!
-                    
+                   
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
             })
@@ -161,6 +164,8 @@ class LoginViewController: UIViewController, UIActionSheetDelegate {
 //            messagesVc.sender = authData.providerData["username"] as! String
 //        }
 }
+    
+
 }
 
     

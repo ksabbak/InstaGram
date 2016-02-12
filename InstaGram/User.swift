@@ -14,6 +14,8 @@ class User {
     let userName: String!
     let userEmail: String!
     let userBio: String!
+    let userPersonalName: String!
+    let userWeb: String!
     let followers: [String]
     var following: [String] = []
     
@@ -41,6 +43,25 @@ class User {
         {
             userBio = ""
         }
+        
+        if let name = userDictionary["name"]
+        {
+            userPersonalName = name as! String
+        }
+        else
+        {
+            userPersonalName = ""
+        }
+        
+        if let web = userDictionary["website"]
+        {
+            userWeb = web as! String
+        }
+        else
+        {
+            userWeb = ""
+        }
+
         
         if let users = userDictionary["followers"] as? [String:AnyObject]
         {
